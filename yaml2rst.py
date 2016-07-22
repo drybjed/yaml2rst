@@ -122,7 +122,7 @@ def convert(lines, strip_regex=None, yaml_strip_regex=None):
                 line = line[3:]
             if state != STATE_YAML:
                 if not last_text_line.endswith('::'):
-                    yield last_indent + '::'
+                    yield last_indent + '\n.. code-block:: yaml'
                 yield ''
             line = get_stripped_line(line, yaml_strip_regex)
             yield last_indent + '  ' + line
